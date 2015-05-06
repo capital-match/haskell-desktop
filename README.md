@@ -16,7 +16,7 @@ desire.
 
 Run, and make sure you expose the ssh port:
 
-`docker run --name haskell-desktop -p 2022:22 haskell-desktop`
+`docker run --name haskell-desktop -p 2022:22 capitalmatch/haskell-desktop`
 
 A randomly generated password for `root` and user `dockerx` will be
 printed. Keep this handy for the next step.
