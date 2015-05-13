@@ -23,5 +23,5 @@ cat > $HOME/.emacs.d/install-package.el <<EOF
 (mapc 'package-install pkg-to-install)
 EOF
 
-emacs --batch --eval "(defconst pkg-to-install '(flycheck auto-complete haskell-mode ghc ghci-completion projectile flx-ido))" -l $HOME/.emacs.d/install-package.el
+emacs --batch --eval "(defconst pkg-to-install '(flycheck auto-complete haskell-mode ghc ghci-completion projectile flx-ido paredit clojure-mode))" -l $HOME/.emacs.d/install-package.el
 
