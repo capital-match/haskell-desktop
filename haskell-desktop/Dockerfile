@@ -12,11 +12,10 @@ ENV GHC_VERSION=7.8.4
 RUN add-apt-repository -y ppa:hvr/ghc && \
     apt-get update && \
     apt-get upgrade -y && \
-    apt-get install -y build-essential git locales binutils ghc-7.8.4 cabal-install-1.20 alex happy zlib1g-dev libtinfo-dev libgmp10 emacs24 vim tmux
+    apt-get install -y build-essential git locales binutils ghc-7.8.4 cabal-install-1.20 alex happy zlib1g-dev libtinfo-dev libgmp10 emacs24 vim tmux curl
 
 # install haskell tools for emacs
 ADD haskell-tools.tgz /usr/local/bin/
-
 
 # install cabal stuff as DEFAULTUSER
 USER $DEFAULTUSER
@@ -31,7 +30,6 @@ RUN cabal update && \
 RUN echo "export PATH=\$HOME/.cabal/bin:/opt/cabal/1.20/bin:/opt/ghc/7.8.4/bin:\$PATH" >> ~/.bashrc
 
 # install emacs packages
-COPY emacs-install-packages.sh ./
 RUN git clone https://github.com/capital-match/haskell-emacs.git && \
     ln -s haskell-emacs/dot-emacs.el .emacs && \
     haskell-emacs/emacs-install-packages.sh
