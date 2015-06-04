@@ -1,4 +1,4 @@
-FROM haskell:7.8
+FROM haskell:7.10.1
 
 COPY Setup.hs .
 
